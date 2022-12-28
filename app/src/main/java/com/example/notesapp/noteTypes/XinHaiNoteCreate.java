@@ -14,39 +14,35 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
-import com.example.notesapp.databinding.ActivityXinHaiNoteCreateBinding;
+import com.example.notesapp.databinding.ActivityXinHaiNoteBinding;
 
 public class XinHaiNoteCreate extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;
-    private ActivityXinHaiNoteCreateBinding binding;
+    private ActivityXinHaiNoteBinding binding;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        binding = ActivityXinHaiNoteCreateBinding.inflate(getLayoutInflater());
+        binding = ActivityXinHaiNoteBinding.inflate(getLayoutInflater()); // 初始化binding
+        View view = binding.getRoot();
         setContentView(binding.getRoot());
-
         setSupportActionBar(binding.toolbar);
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.framelayout, new FirstFragment())//创建事务
+                .addToBackStack(null)//transaction 的方法采用fragment管理栈 用add 可以一页一页退出
+                .commit();//提交事务才可运行
 
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_xin_hai_note_create);
-        appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
-        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
 
-        binding.fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.framelayout, new FirstFragment())//创建事务
+                .addToBackStack(null)//transaction 的方法采用fragment管理栈 用add 可以一页一页退出
+                .commit();//提交事务才可运行
     }
 
-    @Override
-    public boolean onSupportNavigateUp() {
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_xin_hai_note_create);
-        return NavigationUI.navigateUp(navController, appBarConfiguration)
-                || super.onSupportNavigateUp();
-    }
+
 }

@@ -4,11 +4,11 @@
 
     <item
         android:id="@+id/showHidden"
-        android:title="Hidden"
+        android:title="隐藏"
         app:showAsAction="never"/>
     <item
         android:id="@+id/lgview"
-        android:title="List view"
+        android:title="列表显示"
         app:showAsAction="never"/>
     <item android:title="Settings"
         app:showAsAction="never"/>

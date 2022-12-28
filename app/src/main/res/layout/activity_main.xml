@@ -47,9 +47,7 @@
         android:layout_marginBottom="24dp"
         android:elevation="8dp"
         android:src="@drawable/iconfeiji"
-
-        app:rippleColor="@color/black"
-
+        android:backgroundTint="@color/buaa_blue"
         app:maxImageSize="35dp"
         />
 

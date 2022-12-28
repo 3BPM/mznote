@@ -54,7 +54,7 @@
         android:textColor="@color/black"
         android:textSize="24sp"
         android:textStyle="bold"
-        android:backgroundTint="@color/light_blue"/>
+        android:backgroundTint="@color/buaa_blue"/>
 
     <EditText
         android:id="@+id/editText_notes"

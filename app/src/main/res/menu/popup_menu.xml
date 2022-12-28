@@ -3,15 +3,16 @@
 
     <item
         android:id="@+id/pin"
-        android:title="Pin/Unpin"
+        android:title="收藏"
         />
     <item
         android:id="@+id/del"
-        android:title="Delete"
+        android:title="删除"
+        android:icon="@drawable/icon"
         />
     <item
-        android:id="@+id/lock"
-        android:title="Lock"
+        android:id="@+id/copy"
+        android:title="复制"
         />
 
 </menu>
