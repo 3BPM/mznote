@@ -29,7 +29,7 @@ public class XinHaiNoteCreate extends AppCompatActivity {
         binding = ActivityXinHaiNoteBinding.inflate(getLayoutInflater()); // 初始化binding
         View view = binding.getRoot();
         setContentView(binding.getRoot());
-        setSupportActionBar(binding.toolbar);
+
         getSupportFragmentManager()
                 .beginTransaction()
                 .replace(R.id.framelayout, new FirstFragment())//创建事务

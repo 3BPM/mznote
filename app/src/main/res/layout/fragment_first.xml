@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    tools:context=".noteTypes.FirstFragment">
-    <!--    android:background="@drawable/bk"-->
+
+    tools:context=".noteTypes.FirstFragment"
+     android:background="@drawable/hqd">
     <TextView
         android:id="@+id/textview_first"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_first_fragment"
+        android:text="今天别emo了"
         android:textColor="#36D4E8"
         app:layout_constraintBottom_toTopOf="@id/checkLog"
         app:layout_constraintEnd_toEndOf="parent"
@@ -33,7 +33,7 @@
         android:id="@+id/checkLog"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/next"
+        android:text="提交"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -75,6 +75,14 @@
         android:imeOptions="actionSend"
         android:singleLine="true"
         />
-    <!--    回车键显示发送-->
+
+    <TextView
+
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:background="@drawable/kokomi"
+        app:layout_constraintBottom_toBottomOf="parent"
+app:layout_constraintRight_toRightOf="parent"
+     />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

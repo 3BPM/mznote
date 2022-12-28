@@ -22,7 +22,7 @@ import com.example.notesapp.Adapters.NotesListAdapter;
 import com.example.notesapp.DB.RoomDB;
 import com.example.notesapp.Models.Notes;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-
+import com.example.notesapp.noteTypes.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -98,12 +98,13 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                     grid = true;
                 }
                 return true;
-//            case R.id.showHidden:
-//                if (shidden){
-//                    List<Notes> hiddenList = new ArrayList<>();
-//                    hiddenList.addAll(database.mainDAO().getHidden());
-//                }
-//
+            case R.id.showHidden:
+                Intent intent=new Intent(MainActivity.this,XinHaiNoteCreate.class);
+                startActivity(intent);
+
+            case R.id.setting:
+
+
             default:
                 return false;
         }

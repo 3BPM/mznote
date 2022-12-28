@@ -4,13 +4,15 @@
 
     <item
         android:id="@+id/showHidden"
-        android:title="隐藏"
+        android:title="隐藏内容"
         app:showAsAction="never"/>
     <item
         android:id="@+id/lgview"
         android:title="列表显示"
         app:showAsAction="never"/>
-    <item android:title="Settings"
+    <item
+        android:id="@+id/setting"
+        android:title="Settings"
         app:showAsAction="never"/>
 
 </menu>
