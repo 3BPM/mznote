@@ -99,7 +99,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                 return true;
             case R.id.bonus:
                 intent = new Intent(MainActivity.this, XinHaiNoteCreate.class);
-                startActivity(intent);
+                startActivityForResult(intent,101);
                 break;
             case R.id.autoclicker:
                 intent = new Intent(MainActivity.this, AutoClickerActivity.class);

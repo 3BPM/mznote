@@ -90,7 +90,7 @@ public class FirstFragment extends Fragment {
                 Bundle bundle = new Bundle();
                 bundle.putSerializable("NT", notes);
 
-                fragment.setArguments(bundle);
+                fragment.setArguments(bundle);//传note对象
 
                 requireActivity().getSupportFragmentManager()
                         .beginTransaction()

@@ -1,6 +1,7 @@
 package com.example.notesapp.noteTypes;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -59,6 +60,14 @@ public class SecondFragment extends Fragment {
                 if (mFragmentCallBack != null) {
                     mFragmentCallBack.trasmit(notes);
                 }
+                startActivityForResult(new Intent(getContext(), XinHaiNoteCreate.class),1);
+
+            }
+        });
+        binding.gdredo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getActivity().onBackPressed();
 
             }
         });
