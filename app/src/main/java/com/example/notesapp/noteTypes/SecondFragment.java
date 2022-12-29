@@ -1,5 +1,6 @@
 package com.example.notesapp.noteTypes;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,20 +8,42 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.fragment.NavHostFragment;
 
-import com.example.notesapp.R;
+import com.example.notesapp.Models.Notes;
 import com.example.notesapp.databinding.FragmentSecondBinding;
 
 public class SecondFragment extends Fragment {
 
     private FragmentSecondBinding binding;
+    Notes notes;
+    //监听回调
+    FragmentCallBack mFragmentCallBack;
+
+
+    ///onAttach 当 Fragment 与 Activity 绑定时调用
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        ///获取绑定的监听
+        if (context instanceof FragmentCallBack) {
+            mFragmentCallBack = (FragmentCallBack) context;
+        }
+    }
+
+    ///onDetach 当 Fragment 与 Activity 解除绑定时调用
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        mFragmentCallBack = null;
+    }
 
     @Override
     public View onCreateView(
             LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState
     ) {
+
+
         binding = FragmentSecondBinding.inflate(inflater, container, false);
         return binding.getRoot();
     }
@@ -28,11 +51,15 @@ public class SecondFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        binding.buttonSecond.setOnClickListener(new View.OnClickListener() {
+        notes=(Notes)getArguments().getSerializable( "NT" );
+        binding.textviewSecond.setText(notes.getDate()+"\n"+notes.getTitle()+"\n"+notes.getNotes());
+        binding.gdsure.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(SecondFragment.this)
-                        .navigate(R.id.action_SecondFragment_to_FirstFragment);
+                if (mFragmentCallBack != null) {
+                    mFragmentCallBack.trasmit(notes);
+                }
+
             }
         });
     }
@@ -43,4 +70,7 @@ public class SecondFragment extends Fragment {
         binding = null;
     }
 
+    public interface FragmentCallBack {
+        void trasmit(Notes notes);
+    }
 }

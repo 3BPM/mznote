@@ -23,6 +23,7 @@ public class NotesTakerActivity extends AppCompatActivity {
     Button showzh;
     Notes notes;
     boolean isOldNote = false;
+    boolean showChinese = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,8 +36,8 @@ public class NotesTakerActivity extends AppCompatActivity {
         editText_title = findViewById(R.id.editText_title);
         editText_notes = findViewById(R.id.editText_notes);
         imageview_back = findViewById(R.id.imageview_back);
-        showzh=findViewById(R.id.xszw);
-    StringBuffer sb=new StringBuffer();
+        showzh = findViewById(R.id.xszw);
+
         notes = new Notes();
         try {
             notes = (Notes) getIntent().getSerializableExtra("old_note");
@@ -44,29 +45,55 @@ public class NotesTakerActivity extends AppCompatActivity {
 
             editText_notes.setText(notes.getNotes());
             isOldNote = true;
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
-showzh.setOnClickListener(new View.OnClickListener() {
+        showzh.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String title = editText_title.getText().toString();
+                StringBuffer sb = new StringBuffer();
+                String desc = editText_notes.getText().toString();
 
-    @Override
-    public void onClick(View view) {
+                if (showChinese == true)  {
+                    showzh.setText("显示中文");
+                    if (desc.isEmpty()) {
+                        Toast.makeText(NotesTakerActivity.this, "Please add some notes!", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+                    SimpleDateFormat formatter = new SimpleDateFormat("HH:mm MMMMdd号 yyyy");
+                    Date date = new Date(System.currentTimeMillis());
 
-        String str1 = new String( editText_notes.getText().toString());
-            for (int i = 0; i < str1.length(); i++) {//循环遍历敏感词汇
-                if (!Notes.isChineseChar(str1.charAt(i))) {//判断字符串中是否包含敏感词汇
-                    sb.append(str1.charAt(i));
+                    if (!isOldNote) {
+                        notes = new Notes();
+                    }
+
+                    notes.setTitle(title);
+                    notes.setNotes(desc);
+                    notes.setDate(formatter.format(date));
+
+                    String str1 = new String(notes.getNotes());
+
+                    for (int i = 0; i < str1.length(); i++) {//循环遍历敏感词汇
+                        if (!Notes.isChineseChar(str1.charAt(i))) {//判断字符串中是否包含敏感词汇
+                            sb.append(str1.charAt(i));
+                        }
+                    }
+                    editText_notes.setText(sb.toString());
+                    showChinese=false;
                 }
+                else{
+                    showzh.setText("隐藏中文");//回去
+                    editText_notes.setText(notes.getNotes());
+                    showChinese=true;
+                }
+
+
+
+
             }
-
-
-
-
-        editText_notes.setText(sb.toString());
-
-    }
-});
+        });
         imageview_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -82,14 +109,14 @@ showzh.setOnClickListener(new View.OnClickListener() {
                 String title = editText_title.getText().toString();
                 String desc = editText_notes.getText().toString();
 
-                if (desc.isEmpty()){
+                if (desc.isEmpty()) {
                     Toast.makeText(NotesTakerActivity.this, "Please add some notes!", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                SimpleDateFormat formatter = new SimpleDateFormat("dd MMMM, yyyy");
-                Date date = new Date();
+                SimpleDateFormat formatter = new SimpleDateFormat("HH:mm MMMMdd号 yyyy");
+                Date date = new Date(System.currentTimeMillis());
 
-                if (!isOldNote){
+                if (!isOldNote) {
                     notes = new Notes();
                 }
 

@@ -16,7 +16,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.PopupMenu;
-import android.widget.Toast;
 
 import com.example.notesapp.Adapters.NotesListAdapter;
 import com.example.notesapp.DB.RoomDB;
@@ -85,29 +84,35 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
 
     @Override
     public boolean onOptionsItemSelected( MenuItem item ) {
-
-        switch (item.getItemId()){
+        Intent intent;
+        switch (item.getItemId()) {
             case R.id.lgview:
-                if (grid){
+                if (grid) {
                     recyclerView.setLayoutManager(new StaggeredGridLayoutManager(1, LinearLayoutManager.VERTICAL));
-                    item.setTitle("Grid view");
+                    item.setTitle("网格显示");
                     grid = false;
                 } else {
                     recyclerView.setLayoutManager(new StaggeredGridLayoutManager(2, LinearLayoutManager.VERTICAL));
-                    item.setTitle("List view");
+                    item.setTitle("列表显示");
                     grid = true;
                 }
                 return true;
-            case R.id.showHidden:
-                Intent intent=new Intent(MainActivity.this,XinHaiNoteCreate.class);
+            case R.id.bonus:
+                intent = new Intent(MainActivity.this, XinHaiNoteCreate.class);
                 startActivity(intent);
-
+                break;
+            case R.id.autoclicker:
+                intent = new Intent(MainActivity.this, AutoClickerActivity.class);
+                startActivity(intent);
+                break;
             case R.id.setting:
-
-
+                intent = new Intent(MainActivity.this, SettingsActivity.class);
+                startActivity(intent);
+                break;
             default:
                 return false;
         }
+        return true;
     }
 
     private void filter(String newText) {

@@ -3,13 +3,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/showHidden"
-        android:title="隐藏内容"
+        android:id="@+id/bonus"
+        android:title="功德笔记"
         app:showAsAction="never"/>
     <item
         android:id="@+id/lgview"
         android:title="列表显示"
         app:showAsAction="never"/>
+    <item
+        android:id="@+id/autoclicker"
+        android:title="自动工具"
+        app:showAsAction="never"/>
+
     <item
         android:id="@+id/setting"
         android:title="Settings"

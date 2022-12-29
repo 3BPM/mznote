@@ -4,27 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".noteTypes.SecondFragment">
+    tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/textview_second"
+    <Button
+        android:id="@+id/clicker"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="#FF5722"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@id/gdsure"
+        android:gravity="start"
+        android:text="功德+1"
+        android:background="@color/buaa_blue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/finger_service" />
+
+    <Button
+        android:id="@+id/finger_service"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="开始连击"
+        android:background="@color/buaa_blue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/gdsure"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/buaa_blue"
-        android:text="确定"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textview_second" />
 </androidx.constraintlayout.widget.ConstraintLayout>

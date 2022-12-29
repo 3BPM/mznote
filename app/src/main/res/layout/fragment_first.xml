@@ -6,31 +6,33 @@
     android:layout_height="match_parent"
 
     tools:context=".noteTypes.FirstFragment"
-     android:background="@drawable/hqd">
+     android:background="@drawable/muyu">
     <TextView
         android:id="@+id/textview_first"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="今天别emo了"
-        android:textColor="#36D4E8"
-        app:layout_constraintBottom_toTopOf="@id/checkLog"
+        android:text="功德值"
+        android:textSize="30sp"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@id/commit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
     <TextView
-        android:textColor="@color/black"
+
         android:id="@+id/tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="300dp"
         android:text="0"
+        android:textColor="#FFFFFF"
         android:textSize="36sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="InvalidId" />
     <Button
-        android:id="@+id/checkLog"
+        android:id="@+id/commit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="提交"
@@ -67,6 +69,7 @@
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:baselineAligned="false"
+        android:textColor="@color/grey"
         android:hint="输入文字"
         android:layout_marginTop="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
