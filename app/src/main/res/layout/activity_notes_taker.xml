@@ -80,7 +80,7 @@
         android:id="@+id/xszw"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="显示中文"
+        android:text="@string/xszw"
         android:textSize="15sp"
         />
     </LinearLayout>

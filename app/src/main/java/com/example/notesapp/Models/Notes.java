@@ -50,28 +50,27 @@ public class Notes implements Serializable{
     public void setNotes(String notes) {
         this.notes = notes;
     }
-
     public String getDate() {
         return date;
     }
-
     public void setDate(String date) {
         this.date = date;
     }
-
     public boolean isPinned() {
         return pinned;
     }
-
     public void setPinned(boolean pinned) {
         this.pinned = pinned;
     }
-
     public boolean isHidden() {
         return hidden;
     }
-
     public void setHidden(boolean hidden) {
         this.hidden = hidden;
+    }
+    public static boolean isChineseChar(char c) {
+
+        return String.valueOf(c).matches("[\u4e00-\u9fa5]");
+
     }
 }

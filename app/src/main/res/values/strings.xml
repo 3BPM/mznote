@@ -19,6 +19,7 @@
 
     <!-- Sync Preferences -->
     <string name="sync_title">Sync email periodically</string>
+    <string name="xszw">显示中文</string>
     <string name="attachment_title">Download incoming attachments</string>
     <string name="attachment_summary_on">Automatically download attachments for incoming emails
     </string>
