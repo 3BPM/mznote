@@ -73,7 +73,7 @@ public class FloatingViewService extends Service {
                 targetWindowManager = (WindowManager) getSystemService(WINDOW_SERVICE);
                 targetWindowManager.addView(targetView, params);
                 TargetImage = targetView.findViewById(R.id.targetimg);
-                TargetImage.setImageResource(R.drawable.ic_baseline_my_location_24);
+                TargetImage.setImageResource(R.drawable.iconsanjiao);
                 createDraggableWindow(R.id.target_root,targetWindowManager, params,targetView);
                 isTargetSelected =true;
                 create_target.setText(R.string.string_done);

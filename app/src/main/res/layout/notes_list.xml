@@ -39,7 +39,7 @@
                 android:layout_alignParentEnd="true"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="3dp"
-                android:src="@drawable/pin_img" />
+                android:src="@drawable/star" />
         </RelativeLayout>
         <TextView
             android:id="@+id/textview_notes"

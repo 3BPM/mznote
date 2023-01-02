@@ -20,8 +20,6 @@ public interface MainDAO {
     @Query("SELECT * FROM notes WHERE pinned = 0 AND hidden = 0 ORDER BY id DESC")
     List<Notes> getAll();
 
-//    @Query("SELECT * FROM notes WHERE hidden = 1 ORDER BY id DESC")
-//    List<Notes> getHidden();
 
     @Query("SELECT * FROM notes WHERE pinned = 1 AND hidden = 0 ORDER BY id DESC")
     List<Notes> getPinned();
@@ -34,7 +32,5 @@ public interface MainDAO {
 
     @Query("UPDATE notes SET pinned = :pin WHERE id = :id")
     void pin(int id, boolean pin);
-
-
 
 }

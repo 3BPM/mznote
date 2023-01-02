@@ -11,13 +11,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="Run" />
+        android:text="开始" />
 
     <Button
         android:id="@+id/floating_new_target"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
-        android:text="Add" />
+        android:text="添加" />
 
 </LinearLayout>

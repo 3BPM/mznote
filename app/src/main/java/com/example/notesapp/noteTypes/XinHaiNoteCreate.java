@@ -38,11 +38,7 @@ public class XinHaiNoteCreate extends AppCompatActivity implements SecondFragmen
                 .replace(R.id.framelayout, new FirstFragment())//创建事务
                 .addToBackStack(null)//transaction 的方法采用fragment管理栈 用add 可以一页一页退出
                 .commit();//提交事务才可运行
-
-
     }
-
-
 
     @Override
     public void trasmit(Notes text) {
