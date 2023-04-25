@@ -83,5 +83,13 @@
         android:text="@string/xszw"
         android:textSize="15sp"
         />
+
+        <TextView
+            android:id="@+id/shuru"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="输入"
+            android:textSize="15sp" />
     </LinearLayout>
 </LinearLayout>

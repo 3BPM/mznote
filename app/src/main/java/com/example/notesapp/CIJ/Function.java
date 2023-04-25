@@ -135,7 +135,7 @@ public class Function {
                 Compiler.outputS.write(format.toString().getBytes());
             } else {
                 if (c.type.equals("输入")) {
-                    result = Compiler.input.nextInt();
+                    result = Compiler.inputnextInt();
                     symbols.assign(c.code.get(0).Content(), result);
                 } else if (c.type.equals("数组值输入")) {
                     int index = 0;
@@ -153,7 +153,7 @@ public class Function {
                         AddExp();
                         x[1] = pop();
                     }
-                    result = Compiler.input.nextInt();
+                    result = Compiler.inputnextInt();
                     if (flag == 0)
                         symbols.assign(c.code.get(0).Content(), index, result);
                     else// flag==1
